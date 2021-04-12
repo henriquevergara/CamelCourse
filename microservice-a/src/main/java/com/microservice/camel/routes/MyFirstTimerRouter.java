@@ -26,7 +26,7 @@ public class MyFirstTimerRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:first-timer")
+        from("timer:first-timer?period={{timePeriod}}")
                 .log("${body}")
                 .transform().constant("My constant message.")
                 .log("${body}")
